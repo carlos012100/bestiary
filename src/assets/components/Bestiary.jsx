@@ -24,7 +24,11 @@ export default function Bestiary() {
                 setCreatures(data.results)
                 setStatus("Success")
             } catch (err) {
-                setError()
+                if(err.name != "AbortError"){
+                setError("")
+                setStatus("error")
+                }
+
             }
 
         }
